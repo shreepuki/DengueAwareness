@@ -21,8 +21,8 @@ class Dengue(db.Model):
     address = db.Column(db.String, unique=False)
     sector = db.Column(db.String, unique=False)
 
-
-db.create_all()
+with app.app_context():
+    db.create_all()
 
 
 @app.route('/home')
